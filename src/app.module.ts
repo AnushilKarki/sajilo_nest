@@ -6,10 +6,12 @@ import { PostService } from './post.service';
 import { PrismaService } from './prisma.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { VideoModule } from './video/video.module';
 
 @Module({
   imports: [
-    AuthModule
+    AuthModule,
+    VideoModule
     // MongooseModule.forRoot('mongodb://localhost:27017',{dbName: 'studentdb'}),
   ],
   controllers: [AppController],
