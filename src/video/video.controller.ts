@@ -12,7 +12,7 @@ export class VideoController {
     @Header('Accept-Ranges','bytes')
     @Header('Content-Type','video/mp4')
     async getStreamVideo(@Param('id') id:string, @Headers() headers, @Res() res: Response){
-        const videoPath = 'assets/${id}.mp4';
+        const videoPath = 'assets/'+id+'.mp4';
         const { size } = statSync(videoPath);
         const videoRange = headers.range;
         if(videoRange) {
